@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  {% include "head.html" %}
+
+  <body {% if bodyClass %} class="{{ bodyClass }}" {% endif %}>
+    <div class="sticky-footer-wrapper">
+      {% include "skipnav.html" %}
+
+      <!-- Banner -->
+      {% include "banner.html" %}
+
+      <div class="sticky-footer-wrapper__body">
+        <!-- Modified language selector -->
+        <!-- @TODO Enable for 04. -->
+        <div class="grid-container">
+          {% include "language-selector--multilingual.html" %}
+        </div>
+
+        <!-- Header -->
+        {% include "header--extended.html" %}
+        <!-- Content block -->
+        {{ content }}
+      </div>
+
+      {% include "footer--slim.html" %} {% include "identifier.html" %}
+    </div>
+
+    <script src="{{ '/assets/js/uswds.min.js' | url }}"></script>
+  </body>
+</html>
